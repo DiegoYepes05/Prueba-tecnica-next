@@ -1,4 +1,5 @@
 'use client';
+import { ProductsResponse } from '@/interface/ProductsResponse';
 
 import { 
   createContext, 
@@ -21,7 +22,7 @@ export interface CartItem {
 // Definir la interfaz del contexto
 interface CartContextType {
   items: CartItem[];
-  addItem: (product: any, quantity?: number) => void;
+  addItem: (product: ProductsResponse, quantity?: number) => void;
   removeItem: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;
@@ -60,7 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items, mounted]);
 
   // Añadir item al carrito
-  const addItem = (product: any, quantity: number = 1) => {
+  const addItem = (product: ProductsResponse, quantity: number = 1) => {
     setItems(currentItems => {
       // Verificar si el producto ya está en el carrito
       const existingItemIndex = currentItems.findIndex(item => item.id === product.id);

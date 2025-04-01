@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { api } from '@/app/api/api';
 import { ProductsResponse } from '@/interface/ProductsResponse';
-import { Star, Filter, ShoppingCart } from 'lucide-react';
+import {  Filter, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { toast } from 'react-hot-toast';
 
@@ -25,7 +25,7 @@ function ProductsPage() {
   }, []);
 
 
-  const handleAddToCart = (e:any, product:any) => {
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>, product: ProductsResponse) => {
     e.preventDefault(); // Prevenir navegación
     e.stopPropagation(); // Prevenir propagación
     addItem(product, 1);

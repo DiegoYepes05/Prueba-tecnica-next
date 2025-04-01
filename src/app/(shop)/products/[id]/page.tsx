@@ -5,7 +5,7 @@ import { api } from "@/app/api/api";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
-import { Star, Truck, Shield, ArrowLeft, Heart, Share, Plus, Minus, Check } from "lucide-react";
+import { Truck, Shield, ArrowLeft, Heart, Share, Plus, Minus, Check } from "lucide-react";
 import { useCart } from "@/context/CartContext"; // Corregida la ruta de importación
 import { toast } from "react-hot-toast"; 
 import Link from "next/link";

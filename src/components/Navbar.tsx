@@ -3,13 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Menu, X, User } from "lucide-react";
+import {  Menu, X, User } from "lucide-react";
 import CartButton from "@/components/Cart/CartButton";
 import logo from "../../public/logo.jpeg";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
